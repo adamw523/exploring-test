@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  jupyter:
+    build: docker-images/jupyter
+    ports:
+      - "31888:8888"
+    volumes:
+      - ./app:/home/jovyan/app
+      - ./notebooks:/home/jovyan/work
+    environment:
+      GRANT_SUDO: 'yes'
+
